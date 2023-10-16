@@ -17,13 +17,11 @@
         outlined
         v-model="form.email"
         label="Email"
-        type="email"
-
+        filled type="email"
         lazy-rules
         class="col-lg-6 col-xs-6"
-        :rules="[ val => val && val.length > 0 || 'Campo Obrigatório', (val) => validateEmail(val) || 'Digite seu e-mail corretamente']"
+        :rules="[ val => val && val.length > 0 || 'Campo Obrigatório', val => val.includes('@') && val.includes('.com')|| 'Digite seu email corretamente']"
       />
-
       <q-input
         outlined
         v-model="form.telefone"
@@ -34,7 +32,7 @@
         :rules="[ val => val && val.length > 0 || 'Campo obrigatório']"
       />
         <q-input
-          filled
+          outlined
           v-model="form.date"
           label="Data de Nascimento "
           mask="##/##/####"
@@ -42,7 +40,7 @@
           class="col-lg-6 col-xs-6"
           :rules="[ val => val && val.length > 0 || 'Campo obrigatório',]"
         >
-          <template #append>
+        <template #append>
             <q-icon
           name="event"
           class="cursor-pointer"
@@ -65,6 +63,7 @@
             </q-date>
               </q-popup-proxy>
             </q-icon>
+
           </template>
         </q-input>
 
@@ -72,18 +71,19 @@
         <q-btn
           label="Salvar"
           color="primary"
-          class="float-right"
+          class="float"
           icon="save"
           type="submit"
         />
         <q-btn
           label="Cancelar"
           color="white"
-          class="float-right"
+          class="float"
           text-color="primary"
           :to="{ name: 'home' }"
         />
       </div>
+
     </q-form>
   </q-page>
 </template>
