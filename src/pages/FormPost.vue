@@ -9,7 +9,7 @@
         v-model="form.nome"
         label="Nome"
         lazy-rules
-        class="col-lg-6 col-xs-6"
+        class="col-lg-6 col-xs-6 input"
         :rules="[ val => val && val.length > 0 || 'Campo obrigatório']"
       />
 
@@ -17,9 +17,9 @@
         outlined
         v-model="form.email"
         label="Email"
-        filled type="email"
+        type="email"
         lazy-rules
-        class="col-lg-6 col-xs-6"
+        class="col-lg-6 col-xs-6 input"
         :rules="[ val => val && val.length > 0 || 'Campo Obrigatório', val => val.includes('@') && val.includes('.com')|| 'Digite seu email corretamente']"
       />
       <q-input
@@ -28,7 +28,7 @@
         label="Telefone"
         mask="(##) ##### - ####"
         lazy-rules
-        class="col-lg-6 col-xs-6"
+        class="col-lg-6 col-xs-6 input"
         :rules="[ val => val && val.length > 0 || 'Campo obrigatório']"
       />
         <q-input
@@ -37,7 +37,7 @@
           label="Data de Nascimento "
           mask="##/##/####"
           lazy-rules
-          class="col-lg-6 col-xs-6"
+          class="col-lg-6 col-xs-6 input"
           :rules="[ val => val && val.length > 0 || 'Campo obrigatório',]"
         >
         <template #append>
@@ -147,3 +147,13 @@ export default defineComponent({
   }
 })
 </script>
+
+<!-- <style lang="scss" scoped>
+:root {
+  --main-bg-color: brown;
+}
+.input {
+  background-color: var(--main-bg-color) ;
+}
+
+</style> -->
