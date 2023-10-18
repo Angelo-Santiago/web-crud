@@ -147,13 +147,10 @@ export default defineComponent({
   }
 })
 </script>
-
-<!-- <style lang="scss" scoped>
-:root {
-  --main-bg-color: brown;
-}
-.input {
-  background-color: var(--main-bg-color) ;
+<style lang="scss">
+@import '../../node_modules/sass/variables.scss';
+div {
+  color: $green-5;
 }
 
-</style> -->
+</style>
